@@ -494,9 +494,12 @@
 
          @media (max-width: 600px) {
            .chat-assist-widget .chat-window {
-            width: auto !important;
-            height: 530px !important;
-          }
+              width: auto !important;
+              height: 530px !important;
+            }
+            .chat-assist-widget .chat-messages {
+              max-height: 390px !important;
+            }
         }
 
         
