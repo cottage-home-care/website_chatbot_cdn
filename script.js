@@ -495,6 +495,7 @@
          @media (max-width: 600px) {
            .chat-assist-widget .chat-window {
             width: auto !important;
+            height: 530px !important;
           }
         }
 
