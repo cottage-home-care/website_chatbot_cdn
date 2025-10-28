@@ -490,8 +490,18 @@
         .chat-assist-widget .chat-prompt-close:hover {
             color: var(--chat-color-text);
         }
+
+
+         @media (max-width: 600px) {
+           .chat-assist-widget .chat-window {
+            width: auto !important;
+          }
+        }
+
+        
         /* --- END MODIFICATION --- */
     `;
+
   document.head.appendChild(widgetStyles);
 
   // Default configuration (Unchanged)
