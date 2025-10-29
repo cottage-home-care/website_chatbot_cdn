@@ -782,7 +782,7 @@
     localStorage.setItem("userName", name);
     localStorage.setItem("userEmail", email);
     localStorage.setItem("userPhone", phone);
-    localStorage.setItem("pageUrl", `https://cottagehomecare.com${pageUrl}`);
+    localStorage.setItem("pageUrl", `${pageUrl}`);
 
     let isValid = true;
     if (!name) {
@@ -847,7 +847,7 @@
           userId: email,
           userName: name,
           userPhone: phone,
-          pageUrl: `https://cottagehomecare.com${pageUrl}`,
+          pageUrl: `${pageUrl}`,
           isUserInfo: true,
         },
       };
@@ -928,7 +928,7 @@
         userId: userEmail,
         userName: userName,
         userPhone: userPhone,
-        pageUrl: `https://cottagehomecare.com${pageUrl}`,
+        pageUrl: `${pageUrl}`,
       },
     };
 
