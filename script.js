@@ -817,7 +817,7 @@
           userId: email,
           userName: name,
           userPhone: phone,
-          pageUrl: `https://cottagehomecare.com${pageUrl}`,
+          pageUrl: `${pageUrl}`,
         },
       },
     ];
