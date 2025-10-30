@@ -664,7 +664,7 @@
   chatPrompt.className = `chat-prompt-popup ${
     settings.style.position === "left" ? "left-side" : "right-side"
   }`;
-  chatPrompt.innerHTML = ` bv
+  chatPrompt.innerHTML = `
         <div class="chat-prompt-message">
            Welcome to Cottage Home Care Services &#9995; <br /> how may I help you?
         </div>
@@ -813,7 +813,6 @@
       phoneInput.classList.add("error");
       isValid = false;
     }
-
 
     if (!isValid) return;
 
