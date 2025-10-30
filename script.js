@@ -664,7 +664,7 @@
   chatPrompt.className = `chat-prompt-popup ${
     settings.style.position === "left" ? "left-side" : "right-side"
   }`;
-  chatPrompt.innerHTML = `
+  chatPrompt.innerHTML = ` bv
         <div class="chat-prompt-message">
            Welcome to Cottage Home Care Services &#9995; <br /> how may I help you?
         </div>
@@ -761,6 +761,11 @@
     return emailRegex.test(email);
   }
 
+  function isValidUsPhone(phone) {
+    const phoneRegex = /^(\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+    return phoneRegex.test(phone);
+  }
+
   // Handle registration form submission (Includes pageUrl) (Unchanged)
   async function handleRegistration(event) {
     event.preventDefault();
@@ -803,7 +808,13 @@
       phoneError.textContent = "Please enter your phone number";
       phoneInput.classList.add("error");
       isValid = false;
+    } else if (!isValidUsPhone(phone)) {
+      phoneError.textContent = "Please enter a valid US phone number";
+      phoneInput.classList.add("error");
+      isValid = false;
     }
+
+
     if (!isValid) return;
 
     const userInfoMessage = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPage: ${pageUrl}`;
