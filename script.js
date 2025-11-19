@@ -626,9 +626,9 @@
                     <div class="error-text" id="phone-error"></div>
                 </div>
                 <div class="form-field">
-                    <label class="form-label" for="chat-user-state">Message</label>
+                    <label class="form-label" for="chat-user-state">State</label>
                     <select id="chat-user-state" class="form-input" required>
-                        <option value="">Select a message</option>
+                        <option value="">Select your state</option>
                         <option value="NY">New York</option>
                         <option value="NJ">New Jersey</option>
                         <option value="CT">Connecticut</option>
