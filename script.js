@@ -625,6 +625,18 @@
                     <input type="tel" id="chat-user-phone" class="form-input" placeholder="Your phone number" required>
                     <div class="error-text" id="phone-error"></div>
                 </div>
+                <div class="form-field">
+                    <label class="form-label" for="chat-user-state">Message</label>
+                    <select id="chat-user-state" class="form-input" required>
+                        <option value="">Select a message</option>
+                        <option value="NY">New York</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MI">Michigan</option>
+                    </select>
+                    <div class="error-text" id="message-error"></div>
+                </div>
                 <input type="hidden" id="chat-page-url" class="form-input">
                 <button type="submit" class="submit-registration">Continue to Chat</button>
             </form>
@@ -692,6 +704,7 @@
   const nameInput = chatWindow.querySelector("#chat-user-name");
   const emailInput = chatWindow.querySelector("#chat-user-email");
   const phoneInput = chatWindow.querySelector("#chat-user-phone");
+  const stateInput = chatWindow.querySelector("#chat-user-state");
   const nameError = chatWindow.querySelector("#name-error");
   const emailError = chatWindow.querySelector("#email-error");
   const phoneError = chatWindow.querySelector("#phone-error");
@@ -778,11 +791,13 @@
     nameInput.classList.remove("error");
     emailInput.classList.remove("error");
     phoneInput.classList.remove("error");
+    stateInput.classList.remove("error");
 
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
     const phone = phoneInput.value.trim();
     const pageUrl = pageUrlInput.value.trim();
+    const userState = stateInput.value.trim();
 
     localStorage.setItem("userName", name);
     localStorage.setItem("userEmail", email);
@@ -793,6 +808,11 @@
     if (!name) {
       nameError.textContent = "Please enter your name";
       nameInput.classList.add("error");
+      isValid = false;
+    }
+    if(!state) {
+      stateError.textContent = "Please select a state";
+      stateInput.classList.add("error");
       isValid = false;
     }
     if (!email) {
@@ -816,7 +836,7 @@
 
     if (!isValid) return;
 
-    const userInfoMessage = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPage: ${pageUrl}`;
+    const userInfoMessage = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPage: ${pageUrl}\nState: ${state}`;
 
     const sessionData = [
       {
@@ -828,6 +848,7 @@
           userName: name,
           userPhone: phone,
           pageUrl: `${pageUrl}`,
+          userState: userState,
         },
       },
     ];
