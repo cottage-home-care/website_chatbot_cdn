@@ -810,7 +810,7 @@
       nameInput.classList.add("error");
       isValid = false;
     }
-    if(!state) {
+    if(!userState) {
       stateError.textContent = "Please select a state";
       stateInput.classList.add("error");
       isValid = false;
