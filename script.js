@@ -378,7 +378,7 @@
         .chat-assist-widget .registration-form {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 6px;
             margin-bottom: 16px;
         }
         .chat-assist-widget .form-field {
@@ -393,7 +393,7 @@
             color: var(--chat-color-text);
         }
         .chat-assist-widget .form-input {
-            padding: 12px 14px;
+            padding: 8px 10px;
             border: 1px solid var(--chat-color-border);
             border-radius: var(--chat-radius-md);
             font-family: inherit;
