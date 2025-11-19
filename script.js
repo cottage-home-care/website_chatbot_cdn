@@ -836,7 +836,7 @@
 
     if (!isValid) return;
 
-    const userInfoMessage = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPage: ${pageUrl}\nState: ${state}`;
+    const userInfoMessage = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPage: ${pageUrl}\nState: ${userState}`;
 
     const sessionData = [
       {
