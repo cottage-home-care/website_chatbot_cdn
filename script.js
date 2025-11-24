@@ -615,6 +615,16 @@
                     <input type="text" id="chat-user-name" class="form-input" placeholder="Your name" required>
                     <div class="error-text" id="name-error"></div>
                 </div>
+                 <div class="form-field">
+                    <label class="form-label" for="chat-user-role">Are You?</label>
+                    <select id="chat-user-role" class="form-input" required>
+                        <option value="">Select your state</option>
+                        <option value="patient">Patient</option>
+                        <option value="caregiver">Caregiver</option>
+                        <option value="others">Others</option>
+                    </select>
+                    <div class="error-text" id="role-error"></div>
+                </div>
                 <div class="form-field">
                     <label class="form-label" for="chat-user-email">Email</label>
                     <input type="email" id="chat-user-email" class="form-input" placeholder="Your email address" required>
@@ -705,6 +715,7 @@
   const emailInput = chatWindow.querySelector("#chat-user-email");
   const phoneInput = chatWindow.querySelector("#chat-user-phone");
   const stateInput = chatWindow.querySelector("#chat-user-state");
+  const roleInput = chatWindow.querySelector("#chat-user-role");
   const nameError = chatWindow.querySelector("#name-error");
   const emailError = chatWindow.querySelector("#email-error");
   const phoneError = chatWindow.querySelector("#phone-error");
@@ -792,12 +803,14 @@
     emailInput.classList.remove("error");
     phoneInput.classList.remove("error");
     stateInput.classList.remove("error");
+    roleInput.classList.remove("error");
 
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
     const phone = phoneInput.value.trim();
     const pageUrl = pageUrlInput.value.trim();
     const userState = stateInput.value.trim();
+    const userRole = roleInput.value.trim();
 
     localStorage.setItem("userName", name);
     localStorage.setItem("userEmail", email);
@@ -810,9 +823,14 @@
       nameInput.classList.add("error");
       isValid = false;
     }
-    if(!userState) {
+    if (!userState) {
       stateError.textContent = "Please select a state";
       stateInput.classList.add("error");
+      isValid = false;
+    }
+    if (!userRole) {
+      roleError.textContent = "Please select your role as patient, caregiver, or others";
+      roleInput.classList.add("error");
       isValid = false;
     }
     if (!email) {
@@ -849,6 +867,7 @@
           userPhone: phone,
           pageUrl: `${pageUrl}`,
           userState: userState,
+          userRole: userRole,
         },
       },
     ];
@@ -880,6 +899,7 @@
           userPhone: phone,
           pageUrl: `${pageUrl}`,
           isUserInfo: true,
+          userRole: userRole,
         },
       };
 
