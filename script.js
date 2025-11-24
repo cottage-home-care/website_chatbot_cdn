@@ -867,7 +867,7 @@
           userPhone: phone,
           pageUrl: `${pageUrl}`,
           userState: userState,
-          userRole: userRole,
+          user_role: userRole,
         },
       },
     ];
@@ -899,7 +899,7 @@
           userPhone: phone,
           pageUrl: `${pageUrl}`,
           isUserInfo: true,
-          userRole: userRole,
+          user_role: userRole,
         },
       };
 
