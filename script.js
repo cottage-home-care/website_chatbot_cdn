@@ -688,7 +688,7 @@
   }`;
   chatPrompt.innerHTML = `
         <div class="chat-prompt-message">
-           Welcome to Cottage Home Care Services &#9995; <br /> how may I help you?
+           Welcome to Riverside Select Services &#9995; <br /> how may I help you?
         </div>
         <button class="chat-prompt-close">×</button>
     `;
