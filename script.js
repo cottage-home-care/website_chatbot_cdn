@@ -15,9 +15,9 @@
   const widgetStyles = document.createElement("style");
   widgetStyles.textContent = `
         .chat-assist-widget {
-            --chat-color-primary: var(--chat-widget-primary, #E47B2B);
-            --chat-color-secondary: var(--chat-widget-secondary,rgb(193, 107, 42));
-            --chat-color-tertiary: var(--chat-widget-tertiary,rgb(196, 126, 72));
+            --chat-color-primary: var(--chat-widget-primary, #10b981);
+            --chat-color-secondary: var(--chat-widget-secondary, #059669);
+            --chat-color-tertiary: var(--chat-widget-tertiary, #047857);
             --chat-color-light: var(--chat-widget-light, #d1fae5);
             --chat-color-surface: var(--chat-widget-surface, #ffffff);
             --chat-color-text: var(--chat-widget-text, #1f2937);
@@ -519,7 +519,7 @@
       poweredBy: { text: "", link: "" },
     },
     style: {
-      itsPrimaryColor: "#E47B2B",
+      itsPrimaryColor: "#10b981",
       itsSecondaryColor: "#059669",
       position: "right",
       backgroundColor: "#ffffff",
@@ -544,8 +544,8 @@
           ...window.ChatWidgetConfig.style,
           itsPrimaryColor:
             window.ChatWidgetConfig.style?.itsPrimaryColor === "#854fff"
-              ? "#E47B2B"
-              : window.ChatWidgetConfig.style?.itsPrimaryColor || "#E47B2B",
+              ? "#10b981"
+              : window.ChatWidgetConfig.style?.itsPrimaryColor || "#10b981",
           itsSecondaryColor:
             window.ChatWidgetConfig.style?.itsSecondaryColor === "#6b3fd4"
               ? "#059669"
